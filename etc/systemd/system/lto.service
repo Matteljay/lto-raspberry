@@ -1,0 +1,13 @@
+[Unit]
+Description=LTO node on Raspberry
+After=network-online.target
+
+[Service]
+User=pi
+Group=pi
+Restart=always
+WorkingDirectory=/home/pi/java-lto
+ExecStart=/home/pi/java-lto/start-lto.sh
+
+[Install]
+WantedBy=multi-user.target

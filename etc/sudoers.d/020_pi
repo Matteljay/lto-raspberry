@@ -1,0 +1,3 @@
+Cmnd_Alias MYCMDS = /bin/systemctl start lto, /bin/systemctl stop lto, /sbin/reboot
+
+pi ALL=(ALL) NOPASSWD: MYCMDS

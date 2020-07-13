@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+echo "Stopping LTO service, please wait 3 minutes..."
+sudo systemctl stop lto
+echo "Done, you can restart the machine with command: reboot"
+
+# EOF
