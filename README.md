@@ -1,12 +1,12 @@
 # LTO Network staking for Raspberry Pi
 
-## Setting up a Raspberry Pi
+## Introduction
 
 This repository is for those who want to set up an LTO Network node on a Raspberry Pi and start staking LTO cryptocurrency. Here you'll read tips to help speed up the installation process and you can get scripts to facilitate this goal. There's a brief Raspberry Pi server configuration guide, a script to turn the LTO Java executable into a reliable background process, a secure offline tool to generate your encoded seed, a server monitoring short cut and some general tips. Note that this document was based on the [official article](https://docs.ltonetwork.com/public-node/mining-staking/node-raspberry-pi-expert).
 
-## Basic server setup
-
 DISCLAIMER: Following this guide might render your Raspberry Pi inaccessible or delete all data from it. Also, executable files from this GitHub repository will be used which may pose a security risk. Care will be taken to ensure security but I take NO responsibility in case things go wrong and all your coins are lost. Proceed at your own risk!
+
+## Basic server setup
 
 ### Step 1: physically connect
 
@@ -93,11 +93,11 @@ Then start the LTO server and enable it at every server reboot with:
     systemctl --now enable lto
 
 The added commands from the `scripts/` folder makes your server more user friendly:
-- `baser.py` - encodes strings to base58 with the option to perform blake2b/sha-256 hash first
-- `logs` - allow you to monitor the relevant logs especially microblock stats
+- `logs` - allow you to monitor the relevant logs especially microblock stats, exit with Ctrl+C
+- `stop` - stops LTO service, more verbose wrapper for `systemctl stop lto`
+- `start` - starts LTO service, more verbose wrapper for `systemctl start lto` 
 - `reboot` - simple wrapper for `sudo reboot`, reboots the Raspberry Pi
-- `start` - more verbose wrapper for `systemctl start lto` 
-- `stop` - more verbose wrapper for `systemctl stop lto`
+- `baser.py` - encodes strings to base58 with the option to perform blake2b/sha-256 hash first
 
 ## Contact info & donations
 
