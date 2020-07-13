@@ -2,15 +2,15 @@
 
 ## Setting up a Raspberry Pi
 
-This repository is for those who want to set up an LTO Network node on a Raspberry Pi and start staking your LTO cryptocurrency. Here you'll read tips to help speed up the installation process and you can get several scripts for this purpose. There's a brief Raspberry Pi configuration guide, a script to turn the LTO Java executable into a reliable background process, a secure offline tool to generate your encoded seed, a server monitoring short cut and some general tips. Note that this document was based on the [official article](https://docs.ltonetwork.com/public-node/mining-staking/node-raspberry-pi-expert).
+This repository is for those who want to set up an LTO Network node on a Raspberry Pi and start staking LTO cryptocurrency. Here you'll read tips to help speed up the installation process and you can get scripts to facilitate this goal. There's a brief Raspberry Pi server configuration guide, a script to turn the LTO Java executable into a reliable background process, a secure offline tool to generate your encoded seed, a server monitoring short cut and some general tips. Note that this document was based on the [official article](https://docs.ltonetwork.com/public-node/mining-staking/node-raspberry-pi-expert).
 
 ## Basic server setup
 
-DISCLAIMER: Following this guide you might make your Raspberry inaccessible or delete all data from it. Also, executable files from this GitHub repository will be used which may pose a security risk. Care will be taken to ensure security but I take NO responsibility in case things go wrong and all your coins are lost. Proceed at your own risk!
+DISCLAIMER: Following this guide might render your Raspberry Pi inaccessible or delete all data from it. Also, executable files from this GitHub repository will be used which may pose a security risk. Care will be taken to ensure security but I take NO responsibility in case things go wrong and all your coins are lost. Proceed at your own risk!
 
 ### Step 1: physically connect
 
-Your Raspberry Pi should be connected to the modem/router of your ISP with an UTP cable. Connect a computer monitor to the Raspberry to complete the Raspbian installation. It is assumed you now have an internet connection on your Raspberry Pi via your modem.
+Your Raspberry Pi should be connected to the modem/router of your ISP with an ethernet cable. Connect a computer monitor to the Raspberry to help complete the Raspbian installation. Follow the installation steps from the Raspbian SD card. It is assumed you now have an internet connection on your Raspberry Pi via your modem.
 
 Further reading for this step: [Raspbian installation guide](https://electropeak.com/learn/complete-guide-install-raspbian-raspberry-pi/)
 
@@ -46,7 +46,7 @@ Reboot your Raspberry to see if it is still working and can still connect to the
 
 You probably want to be able to control your Raspberry from anywhere in the world. Checking the logs or restarting the server can be useful and fun. Even on your smartphone you could use [Termux](https://termux.com/) on Android or [iSH](https://ish.app/) on Apple iOS to access your Raspberry Pi server. First let's open a root shell: `sudo -s`. Then make sure your system is updated: `apt-get update && apt-get -y upgrade`, that will take a while and restart afterward. Now enable the SSH login feature with command: `systemctl --now enable ssh`. And update your user password with `passwd pi`, make sure you create a strong password.
 
-Lastly, find out your Raspberry's public internet IP address with `curl ipecho.net/plain;echo`. Note this is NOT the same as `192.168.1.123` from above. Let's say for this article, your IP address (public host name) is `1.2.3.4`.
+Lastly, find out your Raspberry's public internet IP address with command `curl ipecho.net/plain;echo`. Note this is NOT the same as `192.168.1.123` from above. Let's say for this article, your IP address (public host name) is `1.2.3.4`.
 
 ### Step 6: log in from a remote machine
 
@@ -58,7 +58,7 @@ Host lto
     HostName 1.2.3.4
     Port 22
 ```
-With probably a bit of [further reading](https://wiki.termux.com/wiki/Remote_Access) you should be ready to simply type `ssh lto` into your phone's terminal app. You then have complete control of your LTO crypto server from any place with internet in the world.
+With probably a bit of [further reading](https://wiki.termux.com/wiki/Remote_Access) you should be ready to simply type `ssh lto` into your phone's terminal app. You will then have complete control of your Raspberry from any place with internet in the world.
 
 ## Setting up the LTO node
 
