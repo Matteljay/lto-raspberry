@@ -98,6 +98,7 @@ The added commands from the `scripts/` folder makes your server more user friend
 - `start` - starts LTO service, more verbose wrapper for `systemctl start lto` 
 - `reboot` - simple wrapper for `sudo reboot`, reboots the Raspberry Pi
 - `baser.py` - encodes strings to base58 with the option to perform blake2b/sha-256 hash first
+- `repack.sh` - quickly executes all the commands from the [official article](https://docs.ltonetwork.com/public-node/mining-staking/node-raspberry-pi-expert), swapping out LevelDB for the Java version. Will download **lto-public-all.jar** and generate a new **lto-public-all-arm.jar** in your current directory.
 
 ## Contact info & donations
 
